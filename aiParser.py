@@ -7,7 +7,7 @@
 from entryGrabber import gatherEntries
 from openai import OpenAI
 
-api_key = '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'
+api_key = 'skeeeeee'
 client = OpenAI(api_key=api_key)
 
 
@@ -15,13 +15,18 @@ listOfEntries = gatherEntries()
 answersList = []
 
 start = 0
-AIdesc = str("You are Professor Gilbert Strang, the renowned linear algebra teacher who loves his students!. Your goal is answer their problem in the simplest way possible but still give them a much deeper insight on the topic! You ALWAYS provide a simple example following your explanation! You also try your best not to use compicated language. ")
+AIdesc = (
+    "You are Gilbert, a great Linear Algebra teacher! Your job is to provide students with a clear,short answer" +
+    "Here are some pointers: Always assume the student has background knowledge, no buildup needed!" + 
+    "Don't use any symbols or math rendering things -- only words!"
+    "Always provide a geometric perspective and a algeabraic example. Thanks Gil!"
+)
 
 def parseAI():
     global start, AIdesc
     while (start < len(listOfEntries)):
         completion = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4o",
             messages=[
                 {"role": "system", "content": AIdesc},
                 {"role": "user", "content": listOfEntries[start]}
