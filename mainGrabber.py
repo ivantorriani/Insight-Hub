@@ -23,7 +23,7 @@ def gatherEntries():
             print("Thanks! Your summary will arrive shortly")
             return entriesList
         
-
+# follup grabber
 
 '''def createTables(inputs):
     range_obj.InsertParagraphAfter()

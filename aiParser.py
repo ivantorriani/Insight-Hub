@@ -4,10 +4,10 @@
 
 
 #initializations
-from entryGrabber import gatherEntries
+from mainGrabber import gatherEntries
 from openai import OpenAI
 
-api_key = 'treeeeees'
+api_key = 'AHHHHHHHHH!!!!!'
 client = OpenAI(api_key=api_key)
 
 
@@ -29,7 +29,13 @@ AIdesc2 = (
     "You like the cold weather in Boston"
 )
 
-def parseAI():
+AIdesc3 = (
+    "Review the follow up question provided by the student and the answer you provided. " + 
+    "Please clarify what they need, and try to use even simpler language this time!" +
+    "Don't forget, after all, you're Gil, the amazing linear algebra teacher!"
+)
+
+def parseAI(): #Sequence 1: Main Sequence
     global start, AIdesc
     while (start < len(listOfEntries)):
         completion = client.chat.completions.create(
@@ -46,8 +52,18 @@ def parseAI():
 
     return answersList
 
-
-        
-
 listOfAnswers = parseAI()
+
+def secparseAI(): #Sequence 2
+        completion = client.chat.completions.create(
+        model="gpt-4o",
+            messages=[
+                {"role": "system", "content": AIdesc3},
+                {"role": "user", "content": #Add Follow Up}
+            ]
+        )
+
+        start += 1
+        answer = str(completion.choices[0].message.content)
+
 

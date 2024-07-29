@@ -1,9 +1,7 @@
 # - - - - - - - - - - - - -
 
 import win32com.client as client
-from tableFinder import findTable
 
-# - - - - - - - - - - - - -
 word = client.Dispatch('Word.Application')
 word.Visible = True
 doc = word.Documents.Open(r'C:\Users\sotiv\Documents\Reflections\Subject Reflections\Linear Algebra\conceptualCelina.docx')
@@ -12,15 +10,14 @@ range_obj = doc.Content
 numOfTables = doc.Tables.Count
 
 
-def followUpTables():
-    checkRequest = input("Gil: Do you have a follow up? ")
-    if (checkRequest == "y"):
-        checkKey = str(input("Gil: Type in table key please! "))
-        findTable(checkKey)
-        return findTable(checkKey)
 
-
-
+def findTable(key):
+    for tables in range(1, int(numOfTables)):
+        checkTable = doc.Tables(tables)
+        checkCell = checkTable.Cell(1,1)
+        if str(key) in checkCell.Range.Text:
+            checkCell = checkTable.Cell(1,2)
+            return checkCell.Range.Text
 
 
 
