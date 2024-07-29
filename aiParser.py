@@ -7,7 +7,7 @@
 from entryGrabber import gatherEntries
 from openai import OpenAI
 
-api_key = 'OUCH!!!! THAT HURT!!!!!!'
+api_key = 'scoop?'
 client = OpenAI(api_key=api_key)
 
 

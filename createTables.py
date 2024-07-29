@@ -4,6 +4,7 @@
 
 import win32com.client as win32
 from aiParser import listOfAnswers, listOfEntries
+from keyGenerator import generateKey
 
 
 
@@ -29,7 +30,12 @@ def createTables():
         follupQCell = table.Cell(2,1)
         follupACell = table.Cell(2,2)
 
-        questionsCell.Range.Text = listOfEntries[start]
+        questionsCell.Range.Text = (
+
+            "Key:" + str(generateKey()    ) + 
+            listOfEntries[start]
+        )
+
         answersCell.Range.Text = listOfAnswers[start]
 
         

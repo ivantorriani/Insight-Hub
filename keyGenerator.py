@@ -8,16 +8,20 @@ def generateKey():
     for i in range(4):
         i = random.randint(1,9)
         key.append(i)
-    return key
 
-preKey = generateKey()
+    randKey =(
+        str(key[0]) + 
+        str(key[1]) + 
+        str(key[2]) 
+    )
 
-key = (
+    return randKey
 
-    str(preKey[0]) + 
-    str(preKey[1]) + 
-    str(preKey[2]) 
-)
+
+
+
+
+
 
 
 
