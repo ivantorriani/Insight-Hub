@@ -1,0 +1,5 @@
+7/28/24: 7:37: Some Current Ideas Are
+- Bring Gil Alive! Use Webscraping, and random keywords, to give Gil a 
+more dynamic personality.
+- Make an algorithm to find tables with certain keys,
+- Make the inputs cleaner with tkinker or whatever

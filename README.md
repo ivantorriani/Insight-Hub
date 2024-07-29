@@ -1,10 +1,5 @@
 # Insight Hub
 
-NEXT STEPS: 
-
-7/28/24: Use keyGenerator and edit createTables so in the (1,1) entry of each table, the key is present. Prettttttyyyy easyyyy :D
-
-
  Your one-stop shop for understanding subjects to the fullest! When studying any subject, there must be a balance between your depth-of-understanding and pace-of-learning. Striking that sweet spot is pretty hard, and students might end up prioritizing one more heavily than the other. The consequence is undesireable... you either lose out on understanding or efficiency.   
 
  Fear no more! Insight Hub is your best friend in this challenge! Whenever you come across a difficult concept -- one that you recognize will take up a majority of your time if you attempt to understand it -- throw it into Insight Hub. Using a customizable AI that can be personalized to your preffered method of learning, Insight Hub will answer your question and neatly organize it into a table with your question and it's generated answer. Now, move on! Your fully fleshed out answer is waiting for you at the next available moment.

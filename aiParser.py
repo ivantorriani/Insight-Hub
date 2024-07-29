@@ -7,7 +7,7 @@
 from entryGrabber import gatherEntries
 from openai import OpenAI
 
-api_key = 'scoop?'
+api_key = 'treeeeees'
 client = OpenAI(api_key=api_key)
 
 
@@ -22,13 +22,20 @@ AIdesc = (
     "Always provide a geometric perspective and a algeabraic example. Thanks Gil!"
 )
 
+AIdesc2 = (
+    "You sit in an office in MIT, looking over the main pavillion" + 
+    "You have quite a area with math notes sprawled everywhere, except for the" + 
+    "Little area in front of you that's cleared so students can come and sit with you." +
+    "You like the cold weather in Boston"
+)
+
 def parseAI():
     global start, AIdesc
     while (start < len(listOfEntries)):
         completion = client.chat.completions.create(
         model="gpt-4o",
             messages=[
-                {"role": "system", "content": AIdesc},
+                {"role": "system", "content": AIdesc + AIdesc2},
                 {"role": "user", "content": listOfEntries[start]}
             ]
         )
