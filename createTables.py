@@ -21,11 +21,13 @@ def createTables():
     while start < len(listOfEntries):
         range_obj.InsertParagraphAfter()
         table_range = doc.Paragraphs(doc.Paragraphs.Count).Range
-        table = doc.Tables.Add(table_range, 1,2)
+        table = doc.Tables.Add(table_range, 2,2)
         table.Borders.Enable = True
-
+        
         questionsCell = table.Cell(1,1)
         answersCell = table.Cell(1,2)
+        follupQCell = table.Cell(2,1)
+        follupACell = table.Cell(2,2)
 
         questionsCell.Range.Text = listOfEntries[start]
         answersCell.Range.Text = listOfAnswers[start]
