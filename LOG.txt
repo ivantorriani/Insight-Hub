@@ -8,3 +8,12 @@ more dynamic personality.
 
 8:26: 
 -Make an algorithm to create the follow up questions
+
+9:14:
+Taking a lil break kinda fried. As I take a break I'll record here what I exactly I need to 
+do next and what problems I have
+
+-Organize user questions and Ai's answers into tables. Ai's answer will be done through the AI Parser. 
+The user's questions will be gotten from grabFollowUp. Both returns will be imported to create tables. 
+
+(Prob): Will I have to find that key again? I can copy from the grabFollow sure. 

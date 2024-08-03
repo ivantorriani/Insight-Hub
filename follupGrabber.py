@@ -17,10 +17,14 @@ def followUpTables():
     if (checkRequest == "y"):
         checkKey = str(input("Gil: Type in table key please! "))
         findTable(checkKey)
-        return findTable(checkKey)
+        return int((findTable(checkKey)))
+
+def followUpGrabber():
+    followUpQ = input("Gil: What's your follow up?")
+    return followUpQ
 
 
-
+print(followUpTables)
 
 
 

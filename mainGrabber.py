@@ -25,7 +25,7 @@ def gatherEntries():
         
 # follup grabber
 
-'''def createTables(inputs):
+def createTables(inputs):
     range_obj.InsertParagraphAfter()
     table_range = doc.Paragraphs(doc.Paragraphs.Count).Range
 
@@ -35,7 +35,7 @@ def gatherEntries():
 
     questionsCell = table.Cell(1,1)
 
-    questionsCell.Range.Text = inputs'''
+    questionsCell.Range.Text = inputs
 
 
 

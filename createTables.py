@@ -3,8 +3,10 @@
 #Current Problem: I can only create one table entry currently. 
 
 import win32com.client as win32
-from aiParser import listOfAnswers, listOfEntries
+from aiParser import listOfAnswers, listOfEntries, secparseAI
 from keyGenerator import generateKey
+from follupGrabber import followUpTables,followUpGrabber
+
 
 
 
@@ -27,8 +29,7 @@ def createTables():
         
         questionsCell = table.Cell(1,1)
         answersCell = table.Cell(1,2)
-        follupQCell = table.Cell(2,1)
-        follupACell = table.Cell(2,2)
+
 
         questionsCell.Range.Text = (
 
@@ -38,11 +39,30 @@ def createTables():
 
         answersCell.Range.Text = listOfAnswers[start]
 
+def addFollowUp():
+        checkValidity = followUpTables()
+        if checkValidity != None:
+            tabValue = int(followUpTables())
+            range_obj.InsertParagraphAfter()
+            table = doc.Tables(tabValue)
+            followUpQ = table.Cell(2,1)
+            followUpA = table.Cell(2,2)
+
+            followUpQ.Range.Text = str(followUpGrabber())
+            followUpA = str(secparseAI())
+        else:
+             print("Gil: Ok, thanks!")
+
+
+addFollowUp()
+
+
+
+
+
+
         
 
-        start += 1
 
-
-createTables()
 doc.SaveAs(r'C:\Users\sotiv\Documents\Reflections\Subject Reflections\Linear Algebra\conceptualCelina.docx')
 

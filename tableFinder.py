@@ -17,7 +17,7 @@ def findTable(key):
         checkCell = checkTable.Cell(1,1)
         if str(key) in checkCell.Range.Text:
             checkCell = checkTable.Cell(1,2)
-            return checkCell.Range.Text
+            return int(tables)
 
 
 
