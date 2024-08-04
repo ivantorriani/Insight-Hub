@@ -33,15 +33,18 @@ def createTables():
 
         questionsCell.Range.Text = (
 
-            "Key:" + str(generateKey()    ) + 
+            "Key:" + str(generateKey()) + 
             listOfEntries[start]
         )
 
         answersCell.Range.Text = listOfAnswers[start]
+        start += 1
+
+createTables()
 
 def addFollowUp():
         checkValidity = followUpTables()
-        if checkValidity != None:
+        if checkValidity is not None:
             tabValue = int(followUpTables())
             range_obj.InsertParagraphAfter()
             table = doc.Tables(tabValue)

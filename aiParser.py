@@ -8,7 +8,7 @@ from mainGrabber import gatherEntries
 from openai import OpenAI
 from follupGrabber import followUpGrabber
 
-api_key = 'cheeeeeeeeeeeesee!!!!'
+api_key = 'we gon be allRIGHT!'
 client = OpenAI(api_key=api_key)
 
 
@@ -54,10 +54,10 @@ def parseAI(): #Sequence 1: Main Sequence
     return answersList
 
 
-listOfAnswers = parseAI
+listOfAnswers = parseAI()
 
 
-def secparseAI(): #Sequence 2
+def secparseAI(): #Sequence 2: Follo up sequence
         
         follUp = str(followUpGrabber())
         completion = client.chat.completions.create(
