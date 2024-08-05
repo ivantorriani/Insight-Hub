@@ -2,6 +2,7 @@
 
 import win32com.client as client
 from tableFinder import findTable
+import easygui as ez
 
 # - - - - - - - - - - - - -
 word = client.Dispatch('Word.Application')
@@ -13,15 +14,15 @@ numOfTables = doc.Tables.Count
 
 
 def followUpTables():
-    checkRequest = input("Gil: Do you have a follow up? ")
+    checkRequest = ez.enterbox("Gil: Do you have a follow up? ")
     if (checkRequest == "y"):
         doc.SaveAs(r'C:\Users\sotiv\Documents\Reflections\Subject Reflections\Linear Algebra\conceptualCelina.docx')
-        checkKey = str(input("Gil: Type in table key please! "))
+        checkKey = str(ez.enterbox("Gil: Type in table key please! "))
         findTable(checkKey)
         return int((findTable(checkKey)))
 
 def followUpGrabber():
-    followUpQ = input("Gil: What's your follow up?")
+    followUpQ = ez.enterbox("Gil: What's your follow up?")
     return followUpQ
 
 

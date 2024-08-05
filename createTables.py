@@ -6,6 +6,8 @@ import win32com.client as win32
 from aiParser import listOfAnswers, listOfEntries, secparseAI
 from keyGenerator import generateKey
 from follupGrabber import followUpTables, followUpGrabber
+import tkinter as tk
+
 
 
 word = win32.Dispatch('Word.Application')
@@ -41,6 +43,7 @@ def createTables():
         start += 1
 
 createTables()
+
 
 def addFollowUp():
         checkValidity = int(followUpTables())

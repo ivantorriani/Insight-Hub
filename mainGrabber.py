@@ -4,7 +4,8 @@
 
 import win32com.client as win32
 import tkinter as tk 
-from tkinter import messagebox
+import easygui as ez
+
 
 #pywin initialization
 word = win32.Dispatch('Word.Application')
@@ -13,7 +14,7 @@ doc = word.Documents.Open(r'C:\Users\sotiv\Documents\Reflections\Subject Reflect
 range_obj = doc.Content
 
 #tkinter imports
-    
+
 
 
 
@@ -23,9 +24,9 @@ entriesList = []
 
 def gatherEntries():
     while True:
-        checkInquiry = input("Do you have any questions to add?: ")
+        checkInquiry = ez.enterbox("Do you have any questions to add?:")
         if checkInquiry == "y":
-            entry = input("Type in your question here please: ")
+            entry = ez.enterbox("Type in your question here please: ")
             entriesList.append(str(entry))
         else:   
             print("Thanks! Your summary will arrive shortly")
