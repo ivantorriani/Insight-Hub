@@ -5,9 +5,7 @@
 import win32com.client as win32
 from aiParser import listOfAnswers, listOfEntries, secparseAI
 from keyGenerator import generateKey
-from follupGrabber import followUpTables,followUpGrabber
-
-
+from follupGrabber import followUpTables, followUpGrabber
 
 
 word = win32.Dispatch('Word.Application')
@@ -16,6 +14,7 @@ doc = word.Documents.Open(r'C:\Users\sotiv\Documents\Reflections\Subject Reflect
 range_obj = doc.Content
 
 start = 0
+
 
 
 def createTables():
@@ -38,21 +37,24 @@ def createTables():
         )
 
         answersCell.Range.Text = listOfAnswers[start]
+        doc.SaveAs(r'C:\Users\sotiv\Documents\Reflections\Subject Reflections\Linear Algebra\conceptualCelina.docx')
         start += 1
 
 createTables()
 
 def addFollowUp():
-        checkValidity = followUpTables()
+        checkValidity = int(followUpTables())
         if checkValidity is not None:
-            tabValue = int(followUpTables())
+            follUpGrabs = followUpGrabber()
+            aiPhase2 = secparseAI(str(follUpGrabs))
+            tabValue =int(checkValidity)
             range_obj.InsertParagraphAfter()
             table = doc.Tables(tabValue)
             followUpQ = table.Cell(2,1)
             followUpA = table.Cell(2,2)
-
-            followUpQ.Range.Text = str(followUpGrabber())
-            followUpA = str(secparseAI())
+            followUpA.Range.Text = str(aiPhase2[0])
+            followUpQ.Range.Text = str(aiPhase2[1])
+            
         else:
              print("Gil: Ok, thanks!")
 
@@ -67,5 +69,4 @@ addFollowUp()
         
 
 
-doc.SaveAs(r'C:\Users\sotiv\Documents\Reflections\Subject Reflections\Linear Algebra\conceptualCelina.docx')
 

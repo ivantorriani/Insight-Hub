@@ -15,6 +15,7 @@ numOfTables = doc.Tables.Count
 def followUpTables():
     checkRequest = input("Gil: Do you have a follow up? ")
     if (checkRequest == "y"):
+        doc.SaveAs(r'C:\Users\sotiv\Documents\Reflections\Subject Reflections\Linear Algebra\conceptualCelina.docx')
         checkKey = str(input("Gil: Type in table key please! "))
         findTable(checkKey)
         return int((findTable(checkKey)))
@@ -24,7 +25,7 @@ def followUpGrabber():
     return followUpQ
 
 
-print(followUpTables)
+
 
 
 
