@@ -1,28 +1,36 @@
-#README
-#Use the crated lists from entryGrabber (Questions) and aiParser (Answer) 
-#Current Problem: I can only create one table entry currently. 
+
+#imports- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 import win32com.client as win32
-from aiParser import listOfAnswers, listOfEntries, secparseAI
+from aiParser import listOfAnswers, listOfEntries
 from keyGenerator import generateKey
-from follupGrabber import followUpTables, followUpGrabber
-import tkinter as tk
+import json
 
-
+#pywin init - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 word = win32.Dispatch('Word.Application')
 word.Visible = True
 doc = word.Documents.Open(r'C:\Users\sotiv\Documents\Reflections\Subject Reflections\Linear Algebra\conceptualCelina.docx')
 range_obj = doc.Content
 
+#json init - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+try:
+    with open('info.json', 'r') as jsonFile:
+        info = json.load(jsonFile)
+except FileNotFoundError:
+    info = []
+
+# create tables - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 start = 0
-
-
-
 def createTables():
     global start
     
     while start < len(listOfEntries):
+
+        #create tables - - - - - - - - - - - - -
+
         range_obj.InsertParagraphAfter()
         table_range = doc.Paragraphs(doc.Paragraphs.Count).Range
         table = doc.Tables.Add(table_range, 2,2)
@@ -31,6 +39,7 @@ def createTables():
         questionsCell = table.Cell(1,1)
         answersCell = table.Cell(1,2)
 
+        #fill in tables - - - - - - - - - - - - -
 
         questionsCell.Range.Text = (
 
@@ -39,10 +48,29 @@ def createTables():
         )
 
         answersCell.Range.Text = listOfAnswers[start]
+
+        #save to json file - - - - - - - - - - - - -
+
+        info.append(
+            "Question: " + str(listOfEntries[start]) + 
+            "Answers: " + str(listOfAnswers[start])
+        )
+
+        with open('info.json', 'w') as file:
+            json.dump(info, file, indent=2)
+            
+        #save doc - - - - - - - - - - - - -
+
         doc.SaveAs(r'C:\Users\sotiv\Documents\Reflections\Subject Reflections\Linear Algebra\conceptualCelina.docx')
         start += 1
 
-createTables()
+        return info
+
+
+createTables() 
+
+print(info)
+
 
 
 

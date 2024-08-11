@@ -6,7 +6,6 @@
 #initializations
 from mainGrabber import gatherEntries
 from openai import OpenAI
-from follupGrabber import followUpGrabber
 
 from aiDescs import (
      AIdesc1,
@@ -14,7 +13,7 @@ from aiDescs import (
      AIdesc3,
 )
 
-api_key = 'okkkkk'
+api_key = 'ahh'
 client = OpenAI(api_key=api_key)
 
 
@@ -44,7 +43,7 @@ def parseAI(): #Sequence 1: Main Sequence
 
 listOfAnswers = parseAI()
 
-
+'''
 def secparseAI(follUp): 
         completion = client.chat.completions.create(
         model="gpt-4o",
@@ -60,7 +59,7 @@ def secparseAI(follUp):
        
 
 
-        '''
+        
         completion = client.chat.completions.create(
              
         model="gpt-4o",
