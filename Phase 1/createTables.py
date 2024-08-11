@@ -45,7 +45,8 @@ def createTables():
 createTables()
 
 
-def addFollowUp():
+
+'''def addFollowUp():
         checkValidity = int(followUpTables())
         if checkValidity is not None:
             follUpGrabs = followUpGrabber()
@@ -59,10 +60,10 @@ def addFollowUp():
             followUpQ.Range.Text = str(aiPhase2[1])
             
         else:
-             print("Gil: Ok, thanks!")
+             print("Gil: Ok, thanks!")'''
 
 
-addFollowUp()
+
 
 
 

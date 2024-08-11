@@ -14,7 +14,7 @@ from aiDescs import (
      AIdesc3,
 )
 
-api_key = 'imthereporterbabyyoucanbethenews'
+api_key = 'okkkkk'
 client = OpenAI(api_key=api_key)
 
 
