@@ -16,10 +16,10 @@ range_obj = doc.Content
 #json init - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 try:
-    with open('info.json', 'r') as jsonFile:
-        info = json.load(jsonFile)
+    with open('newInfo.json', 'r') as jsonFile:
+        newInfo = json.load(jsonFile)
 except FileNotFoundError:
-    info = []
+    newInfo = []
 
 # create tables - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -51,25 +51,28 @@ def createTables():
 
         #save to json file - - - - - - - - - - - - -
 
-        info.append(
+        newInfo.append(
             "Question: " + str(listOfEntries[start]) + 
             "Answers: " + str(listOfAnswers[start])
         )
 
-        with open('info.json', 'w') as file:
-            json.dump(info, file, indent=2)
+        with open('newInfo.json', 'w') as file:
+            json.dump(newInfo, file, indent=2)
             
         #save doc - - - - - - - - - - - - -
 
         doc.SaveAs(r'C:\Users\sotiv\Documents\Reflections\Subject Reflections\Linear Algebra\conceptualCelina.docx')
         start += 1
 
-        return info
+        
 
 
 createTables() 
 
-print(info)
+'''with open('newInfo.json', 'w') as file:
+    json.dump([], file)'''
+
+
 
 
 
