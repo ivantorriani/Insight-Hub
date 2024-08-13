@@ -13,7 +13,9 @@ from aiDescs import (
      AIdesc3,
 )
 
-api_key = 'toodles'
+api_key = (
+    'asdoasd'
+)
 client = OpenAI(api_key=api_key)
 
 
