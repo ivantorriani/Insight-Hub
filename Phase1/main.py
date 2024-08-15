@@ -4,6 +4,7 @@
 import win32com.client as win32
 from aiParser import listOfAnswers, listOfEntries
 from keyGenerator import generateKey
+import easygui 
 import json
 
 #pywin init - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -26,7 +27,7 @@ except FileNotFoundError:
 start = 0
 def createTables():
     global start
-    
+
     while start < len(listOfEntries):
 
         #create tables - - - - - - - - - - - - -
@@ -52,6 +53,7 @@ def createTables():
         #save to json file - - - - - - - - - - - - -
 
         newInfo.append(
+
             "Question: " + str(listOfEntries[start]) + 
             "Answers: " + str(listOfAnswers[start])
         )
@@ -66,8 +68,7 @@ def createTables():
 
         
 
-
-createTables() 
+createTables()
 
 '''with open('newInfo.json', 'w') as file:
     json.dump([], file)'''

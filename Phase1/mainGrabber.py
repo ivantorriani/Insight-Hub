@@ -21,7 +21,8 @@ range_obj = doc.Content
 #initialize list
 entriesList = []
 
-
+#Solutions
+#Find out how to get the batch to the parser, and the restart the gathering process.
 def gatherEntries():
     while True:
         checkInquiry = ez.enterbox("Do you have any questions to add?:")
@@ -31,6 +32,9 @@ def gatherEntries():
         else:   
             print("Thanks! Your summary will arrive shortly")
             return entriesList
+            
+
+
         
 # follup grabber
 

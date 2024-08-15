@@ -14,8 +14,7 @@ from aiDescs import (
 )
 
 api_key = (
-    'asdoasd'
-)
+    'not now'
 client = OpenAI(api_key=api_key)
 
 
@@ -33,6 +32,9 @@ def parseAI(): #Sequence 1: Main Sequence
             messages=[
                 {"role": "system", "content": AIdesc1 + AIdesc2},
                 {"role": "user", "content": listOfEntries[start]}
+
+                
+                
             ]
         )
 

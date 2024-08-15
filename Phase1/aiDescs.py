@@ -1,6 +1,6 @@
 
 AIdesc1 = (
-    "I'm currently reading Deep Learning with Pytorch by Eli Stevens, it's great!" + 
+    "I'm currently reading somethinas, it's great!" + 
     "I'd like you to help clarrify concepts and debug some stuff." + 
     "Please try and keep your summaries relatively brief, and no need to provide" + 
     "Code snippets or examples like that! Always pretend I'm very very very very simple"
